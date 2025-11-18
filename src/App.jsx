@@ -17,7 +17,7 @@ const HorseCatalog = lazy(() =>
 );
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/e-vita-stud">
       <ScrollToTop />
       <Suspense fallback={<Loader />}>
         <Routes>

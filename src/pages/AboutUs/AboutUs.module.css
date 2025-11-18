@@ -86,8 +86,7 @@
 
   /* background-image: url("../../assets/images/paint streaks/aggressive-streak-sm.svg"); */
   /* background-image: url("../../assets/images/paint streaks/marker-paint-md.svg"); */
-  background-image: url("../../assets/images/paint streaks/flowing-stroke-sm.svg"),
-    var(--gradient-gold-lux);
+  background-image: url("../../assets/images/paint streaks/flowing-stroke-sm.svg");
 
   background-repeat: no-repeat;
   background-position: center bottom; /* sau left center / right center */

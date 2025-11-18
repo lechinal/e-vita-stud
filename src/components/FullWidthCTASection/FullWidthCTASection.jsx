@@ -6,15 +6,7 @@ function FullWidthCTASection() {
   return (
     // Folosim o etichetă <section> full-width, imersivă
     <section className={styles.ctaSection}>
-      {/* Imaginea de fundal imersivă */}
-      <img
-        // src="https://picsum.photos/id/110/1920/1080"
-        src={img}
-        alt="Equestrian scene, horses running-cemrecan-yurtman-unsplash"
-        className={styles.ctaImage}
-        loading="lazy"
-      />
-
+      <div className={styles.ctaOverlay}></div>
       {/* Conținutul (centrat) */}
       <div className={styles.ctaContent}>
         {/* Titlul principal al CTA (H2 pentru SEO si ierarhie) */}

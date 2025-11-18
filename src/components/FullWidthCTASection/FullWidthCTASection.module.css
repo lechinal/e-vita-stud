@@ -7,18 +7,21 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
   background-color: var(--color-section-bg);
+  background-image: url("../../assets//images/home/unsplash2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  /* mix-blend-mode: multiply; */
 }
 
-/* Imaginea de Fundal (Cover) */
-.ctaImage {
+.ctaOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   z-index: 1;
+  inset: 0;
+  background-color: var(--color-section-bg);
 
   /* o metoda subtila de a "inchide" imaginea in context de culoare */
   mix-blend-mode: multiply;

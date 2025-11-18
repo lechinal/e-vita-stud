@@ -1,0 +1,393 @@
+.services {
+  width: 100%;
+}
+
+/* Banner Section */
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://picsum.photos/id/160/1920/600") center/cover no-repeat;
+  color: #ffffff;
+  padding: 8em 0 4em 0;
+  text-align: center;
+}
+
+.bannerContent h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bannerContent p {
+  font-size: 1.5em;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+/* Services Navigation */
+.servicesNav {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 4em 0 2em;
+  flex-wrap: wrap;
+}
+
+.navButton {
+  padding: 1em 2em;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
+
+.navButton:hover {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.navButton.active {
+  background: #4caf50;
+  color: #ffffff;
+  border-color: #4caf50;
+}
+
+/* Service Content */
+.serviceContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  align-items: center;
+  margin: 4em 0;
+  padding: 3em;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.serviceInfo h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.serviceDescription {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 2em;
+  line-height: 1.6;
+}
+
+.features h3 {
+  color: #333;
+  margin-bottom: 1em;
+  font-size: 1.3em;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+.features li {
+  padding: 0.5em 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.primaryButton:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+}
+
+.secondaryButton:hover {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.serviceImage {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.serviceImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.serviceImage:hover img {
+  transform: scale(1.05);
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 6em 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  margin: 4em 0;
+
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.pricingContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.sectionHeader h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #4caf50;
+  margin: 0.5em auto 0;
+}
+
+.sectionHeader p {
+  font-size: 1.2em;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.pricingCard {
+  background: #ffffff;
+  padding: 3em 2em;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-5px);
+}
+
+.pricingCard.featured {
+  transform: scale(1.05);
+  border: 2px solid #4caf50;
+}
+
+.pricingCard.featured:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: #ffffff;
+  padding: 0.5em 1.5em;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pricingCard h3 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.price {
+  font-size: 3em;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 1em;
+}
+
+.price span {
+  font-size: 0.4em;
+  color: #666;
+}
+
+.pricingCard ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+.pricingCard li {
+  padding: 0.5em 0;
+  color: #666;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.pricingCard li:last-child {
+  border-bottom: none;
+}
+
+.pricingButton,
+.pricingButtonFeatured {
+  padding: 1em 2em;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pricingButton {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.pricingButton:hover {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.pricingButtonFeatured {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.pricingButtonFeatured:hover {
+  background: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner {
+    padding: 6em 0 3em 0;
+  }
+
+  .bannerContent h1 {
+    font-size: 2.2em;
+  }
+
+  .servicesNav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navButton {
+    width: 200px;
+    text-align: center;
+  }
+
+  .serviceContent {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    padding: 2em;
+  }
+
+  .serviceInfo h2 {
+    font-size: 2em;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard.featured {
+    transform: none;
+  }
+
+  .pricingCard.featured:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerContent h1 {
+    font-size: 1.8em;
+  }
+
+  .serviceContent {
+    padding: 1.5em;
+  }
+
+  .price {
+    font-size: 2.5em;
+  }
+}

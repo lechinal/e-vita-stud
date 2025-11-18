@@ -1,0 +1,66 @@
+/* src/components/Logo/Logo.module.css */
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  /* Folosim variabila de spațiere */
+  gap: var(--space-xs);
+}
+
+.logoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.logo {
+  display: block;
+}
+
+.logoImg {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 70px;
+  transition: opacity 0.3s ease;
+}
+
+.logoImg:hover {
+  opacity: 0.8;
+}
+
+/* Stilurile pentru motto */
+.mottoWrapper {
+  /* Aliniere, spațiere, etc., dacă este necesar */
+  margin-top: 0.5rem; /* Spațiu mic sub logo */
+  text-align: center;
+}
+
+/* Dacă vrei să forțezi fontul și mărimea, deși GradientText ar trebui să le aplice */
+.mottoWrapper > * {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm); /* 0.9rem */
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  /* Asigură că GradientText nu este afișat pe mobil dacă vrei */
+  /* media: (max-width: 1024px) { display: none; } */
+}
+
+/* Adugăm o ajustare de culoare pentru motto când header-ul e scrolled (dacă folosești Header.scrolled) */
+.header.scrolled .motto {
+  color: var(--color-primary-bg);
+}
+
+/* Ajustari pentru diferite dispozitive */
+@media (max-width: 1300px) {
+  .mottoWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .logoImg {
+    max-height: 45px;
+  }
+}

@@ -1,0 +1,70 @@
+/* src/components/BrandArchitectureSection/BrandArchitectureSection.module.css */
+
+/* Secțiunea de Contrast */
+.architectureSection {
+  padding: var(--space-xl) 0; /* Spațiu vertical generos */
+  background-color: var(--color-section-bg); /* British Racing Green */
+  color: var(--color-primary-bg); /* Antique Ivory pentru tot textul */
+}
+
+/* Containerul Lățimii Reținute */
+.containerConstrained {
+  width: 100%;
+  max-width: var(--layout-max-width); /* 1440px */
+  margin: 0 auto;
+  padding: 0 var(--layout-padding-desktop); /* 8rem lateral */
+  text-align: center;
+}
+
+/* Titlu H2 */
+.architectureTitle {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h2); /* 3.5rem */
+  color: var(--color-primary-bg); /* Antique Ivory */
+  margin-bottom: var(--space-lg); /* 128px înainte de Tabs */
+  font-weight: 700;
+}
+
+/* Wrapper pentru CTA general */
+.generalCtaWrapper {
+  margin-top: var(--space-xl); /* 192px după Tabs, pentru a separa vizual */
+}
+
+/* CTA General (Similar cu butonul Hero, dar adaptat culorii de fundal) */
+.generalCta {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background-color: transparent;
+  color: var(--color-accent-gold); /* Auriu regal pe fundal verde */
+  border: 1px solid var(--color-accent-gold);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.generalCta:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-section-bg); /* Text verde închis pe hover auriu */
+}
+
+/* Media Query: Optimizare Mobil */
+@media (max-width: 768px) {
+  .architectureSection {
+    padding: var(--space-md) 0;
+  }
+
+  .containerConstrained {
+    padding: 0 var(--layout-padding-mobile);
+  }
+
+  .architectureTitle {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .generalCtaWrapper {
+    margin-top: var(--space-lg);
+  }
+}

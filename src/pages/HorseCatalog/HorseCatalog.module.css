@@ -1,0 +1,211 @@
+catalogPage {
+  /* Folosim fundalul secțiunii definit global (British Racing Green) */
+  background-color: var(--color-section-bg);
+}
+
+/* 1. INTRO/HERO SECTION */
+.heroSection {
+  /* Folosim culorile de fundal principale (Antique Ivory) */
+  background-color: var(--color-primary-bg);
+  padding: var(--space-lg) 0 var(--space-md) 0;
+  text-align: center;
+}
+
+.sectionLabel {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  color: var(--color-dark-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.pageTitle {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h2);
+  color: var(--color-text-main);
+  margin-bottom: var(--space-sm);
+}
+
+.leadText {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  color: var(--color-text-main);
+  line-height: var(--line-height-body);
+}
+
+/* 2. CATALOG GRID */
+.catalogSection {
+  padding: var(--space-xl) 0;
+}
+
+.horsesGrid {
+  /* 🎯 SOLUȚIA PENTRU LĂȚIME: FLEXBOX cu Centrare și GAP MĂRIT */
+  display: flex;
+  justify-content: center; /* Centrează grupul de carduri orizontal */
+  flex-wrap: wrap;
+  gap: var(--space-md); /* 4rem (spațiu generos între carduri) */
+}
+
+.horseCard {
+  /* 🎯 GARANȚIA LĂȚIMII: Forțăm cardurile să fie mici */
+  flex-basis: 300px; /* Lățimea de bază dorită (300px) */
+  max-width: 32%; /* Asigură că nu depășește o treime, permițând gap-ul mare */
+
+  display: block;
+  background-color: var(--color-primary-bg);
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.horseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.imageWrapper {
+  overflow: hidden;
+  height: 240px; /* Înălțime ajustată */
+}
+
+.horseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.horseCard:hover .horseImage {
+  transform: scale(1.05);
+}
+
+.infoBlock {
+  padding: 1.25rem;
+}
+
+.horseName {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h5);
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.horseBreed {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-bottom: var(--space-xs);
+}
+
+.detailsList {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  color: var(--color-text-main);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.priceTag {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h5);
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: var(--space-xs);
+  text-align: right;
+}
+
+/* 3. CTA FOOTER */
+.ctaSection {
+  background-color: var(--color-second-bg);
+  padding: var(--space-lg) 0;
+  text-align: center;
+}
+
+.ctaText {
+  color: var(--color-primary-bg);
+  font-family: var(--font-family-secondary);
+  max-width: 900px;
+  margin: 0 auto var(--space-sm) auto;
+}
+
+.ctaButton {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  padding: var(--space-xs) var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  text-decoration: none;
+  background-color: var(--color-accent-gold);
+  color: var(--color-text-main);
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.ctaButton:hover {
+  background-color: var(--color-dark-gold);
+}
+
+/* --- 4. RESPONSIVE DESIGN --- */
+
+/* 📏 Tablete (Sub 1024px) */
+@media (max-width: 1024px) {
+  .horsesGrid {
+    gap: var(--space-sm);
+  }
+
+  .horseCard {
+    /* Trecem la 2 coloane pe rând */
+    flex-basis: 45%;
+    max-width: 45%;
+  }
+}
+
+/* 📱 Mobile (Sub 600px) */
+@media (max-width: 600px) {
+  .containerConstrained {
+    /* Presupunând că variabila globală este --layout-padding-mobile */
+    padding: 0 var(--layout-padding-mobile);
+  }
+  .horsesGrid {
+    gap: var(--space-sm);
+  }
+
+  .horseCard {
+    /* Trecem la 1 coloană pe rând */
+    flex-basis: 100%;
+    max-width: 100%;
+    /* margin: 10px; */
+  }
+
+  .imageWrapper {
+    height: 160px;
+  }
+
+  .infoBlock {
+    /* Folosim un padding mare lateral (ex: 2rem) în loc de 1rem pe care l-ai avut anterior */
+    padding: var(--space-sm) var(--space-sm);
+  }
+
+  .horseName {
+    font-size: var(--font-size-h6);
+  }
+
+  .detailsList {
+    font-size: var(--font-size-sm);
+  }
+
+  .heroSection {
+    padding: var(--space-md) 0 var(--space-sm) 0;
+  }
+}

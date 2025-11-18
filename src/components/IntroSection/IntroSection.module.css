@@ -1,0 +1,129 @@
+.introSection {
+  /* Spațiul generos de deasupra și dedesubt (12rem = 192px) */
+  padding: var(--space-xl) 0;
+  background-color: var(--color-primary-bg); /* Antique Ivory */
+}
+
+/* Containerul Lățimii Reținute - Esențial pentru designul editorial */
+.containerConstrained {
+  width: 100%;
+  max-width: var(--layout-max-width); /* 1440px */
+  margin-left: auto; /* Centrare */
+  margin-right: auto; /* Centrare */
+
+  /* Margini generoase pe părțile laterale. Pe desktop, padding-ul este mic, dar containerul este reținut. */
+  padding: 0 var(--space-lg); /* 0 sus/jos, 8rem stânga/dreapta */
+
+  text-align: center; /* Centrare text */
+}
+
+/* Subtitlu Misiune */
+.introMission {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  color: var(--color-accent-burgundy); /* Burgundy regal */
+  margin-bottom: var(--space-xs); /* 16px */
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* Titlu H2 */
+.introTitle {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--space-md);
+  font-weight: 700;
+
+  /* CRITIC: Configurare Spotlight */
+  position: relative;
+  overflow: hidden; /* Ascundem blur-ul spotlight-ului când este în afara zonei */
+  z-index: 1; /* Asigurăm că textul este deasupra blur-ului */
+
+  /* Textul trebuie să fie "întunecat" în mod normal, dar să se ilumineze subtil */
+  color: var(--color-text-main);
+}
+
+/* ---------------------------------------------------- */
+/* 1.1. Sursa de Lumină (Pseudo-Element pe Titlu) */
+/* ---------------------------------------------------- */
+.introTitle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  /* Sursa de lumină: Gradient Radial Auriu */
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 0, 0.4) 0%,
+    rgba(255, 215, 0, 0.05) 30%,
+    transparent 70%
+  );
+
+  /* Setări inițiale preluate din animația Tailwind/Aceternity */
+  opacity: 0;
+  /* Poziția inițială: în afara stânga-sus și scalare mică */
+  transform: translate(-70%, -60%) scale(0.5);
+
+  z-index: -1; /* Asigură că pseudo-elementul e sub textul principal */
+
+  /* Aplicăm animația de la 0.75s la încărcarea paginii */
+  animation: spotlight 2s ease 0.75s 1 forwards;
+}
+
+/* CRITIC: Keyframes-uri (Reconversia Animației Spotlight) */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-70%, -60%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    /* Poziția finală: centrul titlului */
+    transform: translate(0%, -20%) scale(1);
+  }
+}
+
+/* Text de Corp (Body) */
+.introBody {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body); /* 1.125rem (18px) */
+  line-height: var(--line-height-body); /* 1.7 */
+  margin-bottom: var(--space-lg); /* 128px */
+  max-width: 900px; /* Limităm lungimea rândului pentru lizibilitate maximă */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Citatul/Semnătura */
+.introQuote {
+  font-family: var(--font-family-signature); /* Style Script */
+  font-size: var(--font-size-h3); /* 2.5rem (40px) */
+  color: var(--color-accent-burgundy);
+  font-weight: 400;
+  line-height: var(--line-height-heading);
+  margin-top: var(--space-md);
+}
+
+/* Media Query: Optimizare Mobil - Reducem spațiile masive */
+@media (max-width: 768px) {
+  .introSection {
+    padding: var(--space-md) var(--space-sm); /* Reducem padding-ul la 64px sus/jos */
+  }
+
+  .containerConstrained {
+    padding: 0 var(--layout-padding-mobile); /* 32px lateral */
+  }
+
+  .introTitle {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .introBody {
+    margin-bottom: var(--space-md);
+  }
+}

@@ -1,0 +1,152 @@
+/* src/components/Navbar/Navbar.module.css */
+
+.navbarContainer {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation Styles - Desktop */
+.nav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.9rem;
+}
+
+.navLink {
+  text-decoration: none;
+  /* Culoarea link-ului de baza: Antique Ivory (pentru a fi lizibil pe Hero) */
+  color: var(--color-primary-bg);
+  /* Font: Lora (Secundar) */
+  font-family: var(--font-family-secondary);
+  font-weight: 400; /* Regular, pentru subtilitate */
+  /* Mărime: 0.9rem */
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  /* Spațierea literelor pentru eleganță */
+  letter-spacing: 0.15rem;
+  /* Tranziție lentă */
+  transition: color 0.5s ease;
+  position: relative;
+}
+
+/* Hover */
+.navLink:hover {
+  /* Culoare: Auriu Regal */
+  color: var(--color-accent-gold);
+}
+
+/* Link-ul Activ */
+.navLink.active {
+  /* Culoare: Auriu Regal */
+  color: var(--color-accent-gold);
+}
+
+/* Sublinierea Activă (Desktop) */
+.navLink.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Mai subțire */
+  /* Culoare: Auriu Regal */
+  background-color: var(--color-accent-gold);
+}
+
+/* Menu Toggle Button for Mobile */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 4px;
+  z-index: 1001;
+}
+
+.menuToggle span {
+  width: 25px;
+  height: 2px; /* Mai subțire */
+  /* Culoare: Antique Ivory (pentru contrast pe Hero) */
+  background-color: var(--color-primary-bg);
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles - SIMPLU și EFICIENT */
+@media (max-width: 869px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  /* Meniul este ascuns pe mobile în mod implicit */
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    /* Culoarea de fundal a meniului: British Racing Green */
+    background-color: var(--color-section-bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  /* Când meniul este activ, îl afișăm */
+  .nav.navActive {
+    display: flex;
+  }
+
+  .navList {
+    flex-direction: column;
+    /* Spațiu mare */
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .navLink {
+    display: block;
+    /* Dimensiune mare (H3) */
+    font-size: var(--font-size-h3);
+    padding: 1rem 2rem;
+    /* Culoarea link-ului */
+    color: var(--color-primary-bg);
+  }
+
+  .navLink.active::after {
+    display: none;
+  }
+
+  .navLink.active {
+    /* Culoare activă: Auriu Regal */
+    color: var(--color-accent-gold);
+    /* Scoatem background-ul activ */
+    background-color: transparent;
+  }
+
+  /* Hamburger animation */
+  .menuToggleActive span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+    /* Setăm culoarea pe activ la Ivory */
+    background-color: var(--color-primary-bg);
+  }
+
+  .menuToggleActive span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuToggleActive span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    /* Setăm culoarea pe activ la Ivory */
+    background-color: var(--color-primary-bg);
+  }
+}

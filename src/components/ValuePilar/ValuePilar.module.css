@@ -1,0 +1,52 @@
+.pillarContainer {
+  /* Dimensiuni de baza */
+  width: 300px;
+  height: 450px;
+
+  background-image: url("../../assets/images/about/columnNoBg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  padding: 50px 20px;
+
+  transition: transform 0.3s ease-in-out;
+
+  /* transform: scale(1.05); */ /* pentru marire */
+}
+
+.pillarContainer:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Stil pentru textul din interior */
+.pillarContent {
+  text-align: center;
+  max-width: 60%;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+
+  padding-top: 75px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.title {
+  font-family: var(--font-family-primary);
+  color: var(--color-primary-bg);
+  margin-bottom: 15px;
+  font-size: var(--font-size-body);
+}
+
+.body {
+  font-family: var(--font-family-secondary);
+  line-height: 1.6;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-bg);
+}

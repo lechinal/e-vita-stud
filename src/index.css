@@ -1,0 +1,168 @@
+/* ========================================================== */
+/* 1. ROOT VARIABLES (TOKENS) */
+/* ========================================================== */
+.containerConstrained {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 8rem;
+}
+
+:root {
+  /* LAYOUT & GRID */
+  --layout-max-width: 1440px;
+  --layout-padding-desktop: 8rem; /* 128px */
+  --layout-padding-mobile: 2rem; /* 32px */
+
+  /* COLORS (Paleta E VITA STUD) */
+  --color-primary-bg: #f9f3e0; /* Antique Ivory */
+  --color-second-bg: #1e1f23;
+  --color-text-main: #2c2c2c; /* Gri Carbune */
+  --color-accent-gold: #d4af37; /* Auriu regal */
+  --color-dark-gold: #b8860b; /* Dark Gold (Hover) */
+  --color-section-bg: #004225; /* British Racing Green */
+  --color-accent-burgundy: #5c1a1b; /* Burgundy regal */
+
+  --gradient-antique-ivory: linear-gradient(180deg, #f9f3e0 0%);
+
+  --gradient-dark-dramatic: linear-gradient(180deg, #002c17 0%);
+
+  --gradient-footer-anchor: linear-gradient(180deg, #2c2c2c 0%);
+
+  /* Gradient decorativ – accente aurii pentru butoane, linii sau hover-uri */
+  --gradient-gold-lux: linear-gradient(
+    90deg,
+    #d4af37 0%,
+    /* Auriu regal */ #b8860b 100% /* Dark Gold (profund si cald) */
+  );
+
+  /* TYPOGRAPHY - FONT FAMILIES */
+  --font-family-primary: "Playfair Display", serif; /* H1-H4, Sloganuri */
+  --font-family-secondary: "Lora", serif; /* body, p, ul, ol */
+  --font-family-signature: "Style Script", cursive; /* Semnatura vizuala */
+
+  /* TYPOGRAPHY - FONT SIZES (Scara Modulara - 1rem=16px) */
+  --font-size-base: 1.125rem; /* 18px */
+  --scale-factor: 1.333; /* Perfect Fourth */
+
+  --font-size-xs: 0.8rem; /* 12.8px */
+  --font-size-sm: 0.9rem; /* 14.4px */
+  --font-size-body: var(--font-size-base); /* 18px - Text principal */
+  --font-size-h6: 1.25rem; /* 20px */
+  --font-size-h5: 1.5rem; /* 24px */
+  --font-size-h4: 2rem; /* 32px */
+  --font-size-h3: 2.5rem; /* 40px */
+  --font-size-h2: 3.5rem; /* 56px - Titlu Secțiune */
+  --font-size-h1: 5.5rem; /* 88px - Titlu Hero */
+
+  /* SPACING  */
+  --space-xxs: 0.5rem; /* 8px */
+  --space-xs: 1rem; /* 16px */
+  --space-sm: 2rem; /* 32px */
+  --space-md: 4rem; /* 64px */
+  --space-lg: 8rem; /* 128px */
+  --space-xl: 12rem; /* 192px */
+
+  /* LINE HEIGHT */
+  --line-height-body: 1.7;
+  --line-height-heading: 1.2;
+}
+
+/* ========================================================== */
+/* 2. RESET & BASE STYLES */
+/* ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body & Typography  */
+body {
+  font-family: var(--font-family-secondary); /* Lora */
+  background-color: var(--color-primary-bg); /* Antique Ivory */
+  color: var(--color-text-main); /* Gri Carbune */
+  line-height: var(
+    --line-height-body
+  ); /* Liniaritate mai mare pentru lizibilitate de lux (1.6 e prea strans) */
+  overflow-x: hidden;
+  font-size: var(--font-size-body); /* 18px */
+}
+
+/* Headings (Aplicăm fonturile Playfair Display și mărimile de lux) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-primary); /* Playfair Display */
+  font-weight: 700; /* Bold (pentru autoritate) */
+  line-height: 1.3;
+  color: var(--color-text-main);
+}
+
+h1 {
+  font-size: var(--font-size-h1); /* 5.5rem */
+}
+h2 {
+  font-size: var(--font-size-h2); /* 3.5rem */
+}
+h3 {
+  font-size: var(--font-size-h3); /* 2.5rem */
+}
+h4 {
+  font-size: var(--font-size-h4); /* 2.0rem */
+}
+h5 {
+  font-size: var(--font-size-h5); /* 1.5rem */
+  font-weight: 400;
+}
+h6 {
+  font-size: var(--font-size-h6); /* 1.25rem */
+  font-weight: 400;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.5s ease; /* Adăugăm o tranziție fină de lux */
+}
+
+/* Buttons (Setări de bază pentru un buton auriu) */
+.btn-primary {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-bg);
+  padding: var(--space-xs) var(--space-sm);
+  border: none;
+  transition: background-color 0.5s ease;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-dark-gold);
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}

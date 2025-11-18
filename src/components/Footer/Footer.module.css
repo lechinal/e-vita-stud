@@ -1,0 +1,148 @@
+/* src/components/Footer/Footer.module.css */
+
+.footer {
+  background-color: var(--color-second-bg);
+  color: var(--color-primary-bg);
+
+  padding: var(--space-xl) 0 var(--space-sm) 0;
+  font-family: var(--font-family-secondary);
+}
+
+.containerConstrained {
+  /* Același Max-Width */
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-padding-desktop);
+}
+
+/* Structura de Grid */
+.footerGrid {
+  display: grid;
+  /* 3 coloane egale pe desktop, cu spațiu generos */
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg); /* 8rem spațiu între coloane */
+  padding-bottom: var(--space-lg);
+  /* Linia fină de Ivory, ușor transparentă */
+  border-bottom: 1px solid rgba(249, 243, 224, 0.2);
+}
+
+/* Titlul Coloanelor (Playfair Display) */
+.colTitle {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h5);
+  color: var(--color-accent-gold); /* Auriu regal pentru titluri */
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+}
+
+/* Coloana 1: Brand */
+.footerLogo {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h4);
+  color: var(--color-primary-bg);
+  text-decoration: none;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.missionText {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  margin-bottom: var(--space-md);
+}
+
+.socialWrapper {
+  margin-top: var(--space-sm);
+}
+
+/* Coloana 2 & 3: Navigare & Contact */
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLink {
+  color: var(--color-primary-bg);
+  text-decoration: none;
+  display: block;
+  padding: 0.3rem 0;
+  font-size: var(--font-size-sm);
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--color-accent-gold);
+}
+
+.contactItem {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+  margin-bottom: var(--space-xxs);
+}
+
+/* Secțiunea de Jos (Copyright) */
+.footerBottom {
+  padding-top: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: var(--font-size-xs);
+  opacity: 0.8;
+}
+
+.legalLink {
+  color: var(--color-primary-bg);
+  text-decoration: none;
+  padding-left: var(--space-xs);
+  transition: color 0.3s ease;
+}
+
+.legalLink:hover {
+  color: var(--color-accent-gold);
+}
+
+/* Media Query: Mobil & Tabletă (Trecere la Stacked Layout) */
+@media (max-width: 992px) {
+  .containerConstrained {
+    padding: 0 var(--layout-padding-mobile);
+  }
+
+  .footerGrid {
+    /* O singură coloană (stacked) */
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Asigurăm spațiul între coloanele stackate pe mobil */
+  .colBrand,
+  .colNav,
+  .colContact {
+    margin-bottom: 0; /* Spațiul e deja în gap */
+  }
+
+  .colNav,
+  .colContact {
+    /* Adăugăm o linie sub titlul coloanei pe mobil, pentru separare */
+    border-top: 1px solid rgba(249, 243, 224, 0.1);
+    padding-top: var(--space-sm);
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xs);
+  }
+
+  .legalLinks {
+    display: flex;
+    flex-direction: column;
+  }
+  .legalLink {
+    padding: 0;
+    margin-bottom: var(--space-xxs);
+  }
+}

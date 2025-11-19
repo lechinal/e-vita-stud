@@ -12,7 +12,8 @@
 .heroSection {
   position: relative;
   width: 100vw;
-  height: 100vh;
+
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +23,7 @@
 
   background-image: url("../../assets/images/legacy/bg-janko-ferlic-unsplash.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: 40% 60%;
   background-repeat: no-repeat;
   /* filter: var(--filter-heroSectionImage); */
 }
@@ -89,49 +90,6 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-}
-
-/* ---------------------------------------------------- */
-/* 1.1. Sursa de Lumină (Pseudo-Element pe Titlu) */
-/* ---------------------------------------------------- */
-.amerettoTitle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-
-  /* Sursa de lumină: Gradient Radial Auriu */
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 215, 0, 0.4) 0%,
-    rgba(255, 215, 0, 0.05) 30%,
-    transparent 70%
-  );
-
-  /* Setări inițiale preluate din animația Tailwind/Aceternity */
-  opacity: 0;
-  /* Poziția inițială: în afara stânga-sus și scalare mică */
-  transform: translate(-70%, -60%) scale(0.5);
-
-  z-index: -1; /* Asigură că pseudo-elementul e sub textul principal */
-
-  /* Aplicăm animația de la 0.75s la încărcarea paginii */
-  animation: spotlight 2s ease 0.75s 1 forwards;
-}
-
-@keyframes spotlight {
-  0% {
-    opacity: 0;
-    transform: translate(-70%, -60%) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    /* Poziția finală: centrul titlului */
-    transform: translate(0%, -20%) scale(1);
-  }
 }
 
 .amerettoGrid {
@@ -496,6 +454,7 @@
     /* Ajustăm padding-ul secțiunii HERO */
     padding: var(--space-md) var(--layout-padding-mobile, 2rem);
     height: 70vh; /* Facem secțiunea Hero mai scurtă pe mobil */
+    background-position: center center;
   }
 
   /* REFACTORIZARE NECESARĂ: Aplică stilul global pe container */
@@ -509,6 +468,11 @@
     /* Reducem padding-ul vertical al secțiunilor mari */
     padding: var(--space-lg) 0;
   }
+  .heroContent {
+    /* Folosim lățimea containerului, nu se întinde pe 100vw */
+    max-width: 100%;
+    padding: 0; /* Eliminăm padding-ul din interiorul content-ului */
+  }
 
   /* 1. FONTURI ȘI TITLURI MOBILE */
   .heroTitle {
@@ -519,7 +483,7 @@
 
   .heroLead {
     /* Reducem H4 -> H5 */
-    font-size: var(--font-size-h5);
+    font-size: var(--font-size-h5, 1.5rem);
     margin-bottom: var(--space-md);
   }
 
@@ -572,5 +536,26 @@
   .philosophyImage {
     max-width: 90%;
     margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .heroTitle {
+    /* Reducem H3 -> H4 (2.5rem -> 2rem) */
+    font-size: var(--font-size-h4, 2rem);
+  }
+
+  .heroLead {
+    /* Reducem H5 -> Body (1.5rem -> 1.125rem) */
+    font-size: var(--font-size-body, 1.125rem);
+  }
+
+  /* Mărim umbra textului pentru lizibilitate maximă */
+  .heroContent {
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  }
+
+  .heroSection {
+    /* Reducem și mai mult înălțimea */
+    height: 60vh;
   }
 }

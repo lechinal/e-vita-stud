@@ -1,90 +1,52 @@
 .introSection {
   /* Spațiul generos de deasupra și dedesubt (12rem = 192px) */
-  padding: var(--space-xl) 0;
+  padding: var(--space-md) 0;
   background-color: var(--color-primary-bg); /* Antique Ivory */
 }
 
 /* Containerul Lățimii Reținute - Esențial pentru designul editorial */
 .containerConstrained {
   width: 100%;
-  max-width: var(--layout-max-width); /* 1440px */
-  margin-left: auto; /* Centrare */
-  margin-right: auto; /* Centrare */
+  max-width: var(--layout-max-width);
+  margin-left: auto;
+  margin-right: auto;
 
-  /* Margini generoase pe părțile laterale. Pe desktop, padding-ul este mic, dar containerul este reținut. */
   padding: 0 var(--space-lg); /* 0 sus/jos, 8rem stânga/dreapta */
 
-  text-align: center; /* Centrare text */
+  text-align: center;
+}
+.introMissionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /* Subtitlu Misiune */
 .introMission {
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-body);
-  color: var(--color-accent-burgundy); /* Burgundy regal */
-  margin-bottom: var(--space-xs); /* 16px */
+  font-size: var(--font-size-sm);
+  color: var(--color-dark-gold);
+  padding-bottom: var(--space-md);
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--space-xxs);
 }
 
 /* Titlu H2 */
 .introTitle {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-h2);
-  margin-bottom: var(--space-md);
-  font-weight: 700;
+  padding-bottom: var(--space-md);
+  /* font-weight: 700; */
 
-  /* CRITIC: Configurare Spotlight */
   position: relative;
-  overflow: hidden; /* Ascundem blur-ul spotlight-ului când este în afara zonei */
-  z-index: 1; /* Asigurăm că textul este deasupra blur-ului */
+  overflow: hidden;
 
-  /* Textul trebuie să fie "întunecat" în mod normal, dar să se ilumineze subtil */
   color: var(--color-text-main);
-}
+  background-image: url("../../assets/images/paint streaks/flowing-stroke-sm.svg");
 
-/* ---------------------------------------------------- */
-/* 1.1. Sursa de Lumină (Pseudo-Element pe Titlu) */
-/* ---------------------------------------------------- */
-.introTitle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-
-  /* Sursa de lumină: Gradient Radial Auriu */
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 215, 0, 0.4) 0%,
-    rgba(255, 215, 0, 0.05) 30%,
-    transparent 70%
-  );
-
-  /* Setări inițiale preluate din animația Tailwind/Aceternity */
-  opacity: 0;
-  /* Poziția inițială: în afara stânga-sus și scalare mică */
-  transform: translate(-70%, -60%) scale(0.5);
-
-  z-index: -1; /* Asigură că pseudo-elementul e sub textul principal */
-
-  /* Aplicăm animația de la 0.75s la încărcarea paginii */
-  animation: spotlight 2s ease 0.75s 1 forwards;
-}
-
-/* CRITIC: Keyframes-uri (Reconversia Animației Spotlight) */
-@keyframes spotlight {
-  0% {
-    opacity: 0;
-    transform: translate(-70%, -60%) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    /* Poziția finală: centrul titlului */
-    transform: translate(0%, -20%) scale(1);
-  }
+  background-repeat: no-repeat;
+  background-position: center bottom; /* sau left center / right center */
+  background-size: cover;
 }
 
 /* Text de Corp (Body) */
@@ -108,18 +70,21 @@
   margin-top: var(--space-md);
 }
 
-/* Media Query: Optimizare Mobil - Reducem spațiile masive */
+/* Media Query: Optimizare Mobil  */
 @media (max-width: 768px) {
   .introSection {
-    padding: var(--space-md) var(--space-sm); /* Reducem padding-ul la 64px sus/jos */
+    padding: var(--space-md) var(--space-sm);
   }
 
   .containerConstrained {
-    padding: 0 var(--layout-padding-mobile); /* 32px lateral */
+    padding: 0 var(--layout-padding-mobile);
   }
 
   .introTitle {
     font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+
+    font-size: var(--font-size-h4, 2rem);
     margin-bottom: var(--space-sm);
   }
 

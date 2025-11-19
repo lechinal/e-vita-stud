@@ -1,10 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./FullWidthCTASection.module.css";
 
-import img from "../../assets/images/home/unsplash2.jpg";
 function FullWidthCTASection() {
   return (
-    // Folosim o etichetă <section> full-width, imersivă
     <section className={styles.ctaSection}>
       <div className={styles.ctaOverlay}></div>
       {/* Conținutul (centrat) */}
@@ -18,9 +17,9 @@ function FullWidthCTASection() {
         </p>
 
         {/* Butonul CTA */}
-        <a href="/contact" className={styles.ctaButton}>
+        <Link to="/contact" className={styles.ctaButton}>
           Programează o Vizită
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -9,14 +9,14 @@
 /* INTRO SECTION                   */
 /* =============================== */
 .introSection {
-  padding: 10rem 0 6rem 0;
+  /* padding: 10rem 0 6rem 0; */
   text-align: center;
 
   /* Imaginea de fundal trebuie gestionată separat */
   background-image: url("../../assets/images/about/aboutBG-1024x683-horse.jpg");
   /* background-image: url("../../assets/images/ameretto/unnamed-2-1-1024x680.jpg"); */
   /* background-position: center; */
-  background-position: center center;
+  background-position: 55% 45%;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -105,14 +105,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.originImage {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border: 3px solid var(--color-section-bg);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .paragraph {
@@ -328,7 +320,7 @@ details[open] > .serviceTitle {
   position: absolute;
   bottom: -10px;
   left: 0;
-  height: 3px;
+  height: 4px;
   width: 75%;
   background-color: var(--color-accent-gold);
 

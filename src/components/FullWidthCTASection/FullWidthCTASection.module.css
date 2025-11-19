@@ -15,6 +15,7 @@
   background-repeat: no-repeat;
   background-position: center 40%;
   /* mix-blend-mode: multiply; */
+  /* margin-top: 0; */
 }
 
 /* o metoda subtila de a "inchide" imaginea in context de culoare */
@@ -32,7 +33,6 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: var(--space-md);
   color: var(--color-primary-bg); /* Antique Ivory */
 }
 
@@ -76,16 +76,65 @@
   color: var(--color-primary-bg);
 }
 
-/* Media Query: Mobil */
+/* Media Query: Tablete */
+@media (max-width: 1024px) {
+  /* Reducem dimensiunea CTA (din 60vh la 50vh) */
+  .ctaSection {
+    height: 50vh;
+  }
+
+  /* Titlul H2: Vrem să te invităm. */
+  .ctaTitle {
+    /* Reducem H2 (3.5rem) -> H3 (2.5rem) */
+    font-size: var(--font-size-h3, 2.5rem);
+  }
+
+  /* Mesajul Cursiv: Vino să simți tăcerea... */
+  .ctaMessage {
+    /* Reducem H1 (5.5rem) -> H2 (3.5rem) */
+    font-size: var(--font-size-h2, 3.5rem);
+    margin-bottom: var(--space-md);
+  }
+}
+
+/* Media Query: Mobil (Sub 768px) */
 @media (max-width: 768px) {
   .ctaSection {
-    height: 40vh;
+    height: 45vh; /* Ușor mai mare decât 40vh, pentru a lăsa spațiu textului */
   }
+
+  /* Titlul H2 */
   .ctaTitle {
-    font-size: 2rem;
+    /* Reducem H3 (2.5rem) -> H4 (2rem) */
+    font-size: var(--font-size-h4, 2rem);
+    margin-bottom: var(--space-xs);
   }
+
+  /* Mesajul Cursiv */
   .ctaMessage {
-    font-size: 3rem; /* Reducem, dar rămâne impunător */
+    /* Reducem H2 (3.5rem) -> H3 (2.5rem) */
+    font-size: var(--font-size-h3, 2.5rem);
     margin-bottom: var(--space-md);
+  }
+
+  /* Butonul */
+  .ctaButton {
+    /* Mărim padding-ul pe verticală pentru a face butonul mai ușor de apăsat */
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Media Query: Ecrane Foarte Mici (Sub 400px / 25rem) */
+@media (max-width: 400px) {
+  /* Asigurăm lizibilitatea pe 320px */
+  .ctaTitle {
+    /* Reducem H4 (2rem) -> H5 (1.5rem) */
+    font-size: var(--font-size-h5, 1.5rem);
+  }
+
+  .ctaMessage {
+    /* Reducem H3 (2.5rem) -> H4 (2rem) */
+    font-size: var(--font-size-h4, 2rem);
+    margin-bottom: var(--space-sm);
   }
 }

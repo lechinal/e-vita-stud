@@ -19,7 +19,7 @@ const values = [
 ];
 function AboutUs() {
   return (
-    <div className={styles.aboutPage}>
+    <section className={styles.aboutPage}>
       {/* INTRO SECTION */}
       <section className={styles.introSection}>
         <div className={styles.containerConstrained}>
@@ -212,7 +212,7 @@ function AboutUs() {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 }
 

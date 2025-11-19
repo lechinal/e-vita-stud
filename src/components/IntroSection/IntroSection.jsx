@@ -18,13 +18,15 @@ function IntroSection() {
     <section className={styles.introSection}>
       {/* Containerul care aplică Lățimea Maximă Reținută (Max-Width: 1440px) */}
       <div className={styles.containerConstrained}>
-        {/* Subtitlul/Misiunea: Finețe și Lora */}
-        <p className={styles.introMission}>O Moștenire. Nu o Modă.</p>
+        <div className={styles.introMissionBox}>
+          {/* Subtitlul/Misiunea: Finețe și Lora */}
+          <span className={styles.introMission}>O Moștenire. Nu o Modă.</span>
 
-        {/* Titlu Secțiune (H2): Impact și Playfair Display */}
-        <h2 className={styles.introTitle}>
-          Autoritatea Tăcută a Transilvaniei.
-        </h2>
+          {/* Titlu Secțiune (H2): Impact și Playfair Display */}
+          <h2 className={styles.introTitle}>
+            Autoritatea Tăcută a Transilvaniei.
+          </h2>
+        </div>
 
         {/* Text de Corp (Lora - lizibilitate maximă) */}
         <p className={styles.introBody}>{introText}</p>

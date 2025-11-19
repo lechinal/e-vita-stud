@@ -67,6 +67,20 @@
 
   --text-shadow-mainTitle: 2px 2px 5px rgba(0, 0, 0, 0.7);
   --text-shadow-heroSlogan: 1px 1px 3px rgba(0, 0, 0, 0.7);
+
+  /*fundal deschis */
+  --text-shadow-heading: 2px 2px 4px rgba(0, 0, 0, 0.18);
+  /*fundal inchis */
+  --text-shadow-heading-dark: 2px 2px 6px rgba(0, 0, 0, 0.55);
+  /* pt paragrAFE*/
+  --text-shadow-body: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  /*signature font */
+  --text-shadow-signature: 1px 1px 3px rgba(92, 26, 27, 0.25); /* Burgundy */
+  /*ANCHOR LINKS /navbar */
+  --text-shadow-link: 0 0 3px rgba(0, 0, 0, 0.2);
+  /*text-shadow pt hero pe imagine ??? */
+  --text-shadow-hero-strong: 3px 3px 12px rgba(0, 0, 0, 0.85);
+  --text-shadow-hero-soft: 2px 2px 6px rgba(0, 0, 0, 0.55);
 }
 
 /* ========================================================== */

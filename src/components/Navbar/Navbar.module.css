@@ -20,30 +20,22 @@
 
 .navLink {
   text-decoration: none;
-  /* Culoarea link-ului de baza: Antique Ivory (pentru a fi lizibil pe Hero) */
   color: var(--color-primary-bg);
-  /* Font: Lora (Secundar) */
   font-family: var(--font-family-secondary);
-  font-weight: 400; /* Regular, pentru subtilitate */
-  /* Mărime: 0.9rem */
+  font-weight: 400;
   font-size: var(--font-size-sm);
   text-transform: uppercase;
-  /* Spațierea literelor pentru eleganță */
+
   letter-spacing: 0.15rem;
-  /* Tranziție lentă */
   transition: color 0.5s ease;
   position: relative;
 }
 
-/* Hover */
 .navLink:hover {
-  /* Culoare: Auriu Regal */
   color: var(--color-accent-gold);
 }
 
-/* Link-ul Activ */
 .navLink.active {
-  /* Culoare: Auriu Regal */
   color: var(--color-accent-gold);
 }
 
@@ -93,8 +85,9 @@
     right: 0;
     width: 100%;
     height: 100vh;
-    /* Culoarea de fundal a meniului: British Racing Green */
+
     background-color: var(--color-section-bg);
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -108,17 +101,17 @@
 
   .navList {
     flex-direction: column;
-    /* Spațiu mare */
-    gap: var(--space-lg);
+
+    gap: var(--space-xxs);
     text-align: center;
   }
 
   .navLink {
     display: block;
-    /* Dimensiune mare (H3) */
+
     font-size: var(--font-size-h3);
     padding: 1rem 2rem;
-    /* Culoarea link-ului */
+
     color: var(--color-primary-bg);
   }
 
@@ -127,16 +120,15 @@
   }
 
   .navLink.active {
-    /* Culoare activă: Auriu Regal */
     color: var(--color-accent-gold);
-    /* Scoatem background-ul activ */
+
     background-color: transparent;
   }
 
   /* Hamburger animation */
   .menuToggleActive span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
-    /* Setăm culoarea pe activ la Ivory */
+
     background-color: var(--color-primary-bg);
   }
 
@@ -146,7 +138,7 @@
 
   .menuToggleActive span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
-    /* Setăm culoarea pe activ la Ivory */
+
     background-color: var(--color-primary-bg);
   }
 }

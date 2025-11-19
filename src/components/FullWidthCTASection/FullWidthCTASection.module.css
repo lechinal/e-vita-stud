@@ -17,13 +17,13 @@
   /* mix-blend-mode: multiply; */
 }
 
+/* o metoda subtila de a "inchide" imaginea in context de culoare */
 .ctaOverlay {
   position: absolute;
   z-index: 1;
   inset: 0;
   background-color: var(--color-section-bg);
 
-  /* o metoda subtila de a "inchide" imaginea in context de culoare */
   mix-blend-mode: multiply;
 }
 

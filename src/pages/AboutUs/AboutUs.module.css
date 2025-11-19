@@ -14,8 +14,9 @@
 
   /* Imaginea de fundal trebuie gestionată separat */
   background-image: url("../../assets/images/about/aboutBG-1024x683-horse.jpg");
+  /* background-image: url("../../assets/images/ameretto/unnamed-2-1-1024x680.jpg"); */
   /* background-position: center; */
-  background-position: 50% 25%;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -35,13 +36,13 @@
   line-height: var(--line-height-heading);
   font-weight: 700;
   /* 🎯 Soluție pentru vizibilitate (Text Shadow) */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: var(--text-shadow-mainTitle);
 }
 
 .leadParagraph {
   max-width: 900px;
   margin: 0 auto;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  text-shadow: var(--text-shadow-heroSlogan);
   font-family: var(--font-family-primary);
   font-size: var(--font-size-h3);
   color: var(--color-accent-gold);
@@ -430,7 +431,8 @@ details[open] > .serviceTitle {
 @media (max-width: 1600px) {
   .pillarsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15rem;
+    /* Reducem gap-ul uriaș de 15rem */
+    gap: 5rem;
   }
 
   .pillarsGrid > :nth-child(3) {
@@ -439,11 +441,86 @@ details[open] > .serviceTitle {
   }
 }
 
-/* 📏 Sub 900px → o singură coloană, toate 3 pe rânduri separate */
+/* 2. Tablete (Sub 1024px) */
+@media (max-width: 1024px) {
+  /* CONTAINER ȘI PADDING */
+  .containerConstrained {
+    padding: 0 var(--layout-padding-mobile, 2rem);
+  }
+
+  .introSection {
+    /* Reducem padding-ul vertical al secțiunilor */
+    padding: 6rem 0;
+    height: auto; /* Lăsăm înălțimea să fie definită de conținut */
+    min-height: 70vh;
+  }
+
+  .originSection,
+  .valuesSection,
+  .servicesSection,
+  .teamSection,
+  .philosophySection,
+  .ctaSection {
+    padding: 6rem 0; /* Reducem padding-ul vertical de la 8rem */
+  }
+
+  /* LAYOUT GRID (Trebuie să forțăm coloana unică) */
+  .originContent,
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  /* FONTURI TITLURI (H1 -> H2, H2 -> H3) */
+  .mainTitle {
+    /* Reducem H1 -> H2 */
+    font-size: var(--font-size-h2, 3.5rem);
+  }
+
+  .leadParagraph {
+    /* Reducem H3 -> H4 */
+    font-size: var(--font-size-h4, 2rem);
+    margin-bottom: var(--space-lg);
+  }
+
+  .sectionTitle,
+  .sectionTitleLight,
+  .philosophyTitle {
+    /* Reducem H2 -> H3 */
+    font-size: var(--font-size-h3, 2.5rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .founderName {
+    /* Reducem 2.5rem -> H4 */
+    font-size: var(--font-size-h4, 2rem);
+  }
+
+  .ctaTitle {
+    /* Reducem H1 -> H2 */
+    font-size: var(--font-size-h2, 3.5rem);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Aranjare Team Section */
+  .teamContent {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  .founderBio {
+    text-align: center;
+  }
+}
+
+/* 3. Mobile (Sub 900px) - CORECȚIE GRID ȘI FONTURI MICI */
 @media (max-width: 900px) {
   .pillarsGrid {
     grid-template-columns: 1fr;
-    gap: 8rem;
+    /* Reducem gap-ul la o valoare mai mică */
+    gap: var(--space-lg);
     justify-self: stretch;
   }
 
@@ -451,33 +528,61 @@ details[open] > .serviceTitle {
     grid-column: auto;
     justify-self: stretch;
   }
-}
 
-@media (max-width: 1024px) {
-  .originContent,
-  .visionGrid,
-  .valuesGrid,
-  .domainGrid,
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  /* Aranjare Team Section pentru Mobil */
-  .teamContent {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .founderBio {
-    text-align: center;
-  }
-
-  .containerConstrained {
-    padding: 0 2rem;
-  }
-
+  /* FONTURI TITLURI MOBILE */
   .mainTitle {
-    font-size: 3rem;
+    /* Reducem H2 -> H3 */
+    font-size: var(--font-size-h3, 2.5rem);
+  }
+
+  .leadParagraph {
+    /* Reducem H4 -> H5 */
+    font-size: var(--font-size-h5, 1.5rem);
+  }
+
+  .sectionTitle,
+  .sectionTitleLight,
+  .philosophyTitle,
+  .ctaTitle {
+    /* Reducem H3 -> H4 */
+    font-size: var(--font-size-h4, 2rem);
+  }
+
+  .originQuote {
+    /* Reducem H4 -> H5 */
+    font-size: var(--font-size-h5, 1.5rem);
+    padding: 2rem 1.5rem;
+  }
+
+  .paragraph,
+  .paragraphTeam,
+  .philosophyLead,
+  .philosophyText,
+  .servicesLead,
+  .serviceBody {
+    /* Reducem H6 -> Body (1.125rem) sau Sm (1rem) */
+    font-size: var(--font-size-body, 1.125rem);
+  }
+
+  .serviceTitle {
+    /* Reducem H5 -> H6 */
+    font-size: var(--font-size-h6, 1.25rem);
+  }
+
+  /* Ajustări Team Section */
+  .founderPhoto {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Ajustări CTA */
+  .ctaButtons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .ctaButton {
+    width: 100%;
+    min-width: unset;
   }
 }

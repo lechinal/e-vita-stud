@@ -29,11 +29,10 @@
   --gradient-footer-anchor: linear-gradient(180deg, #2c2c2c 0%);
 
   /* Gradient decorativ – accente aurii pentru butoane, linii sau hover-uri */
-  --gradient-gold-lux: linear-gradient(
-    90deg,
-    #d4af37 0%,
-    /* Auriu regal */ #b8860b 100% /* Dark Gold (profund si cald) */
-  );
+  --gradient-gold-lux: linear-gradient(90deg, #d4af37 0%, #b8860b 100%);
+
+  /*Filtru subtil pt a se alinia la estetica din branding */
+  --filter-heroSectionImage: brightness(0.8) contrast(1.1);
 
   /* TYPOGRAPHY - FONT FAMILIES */
   --font-family-primary: "Playfair Display", serif; /* H1-H4, Sloganuri */
@@ -65,6 +64,9 @@
   /* LINE HEIGHT */
   --line-height-body: 1.7;
   --line-height-heading: 1.2;
+
+  --text-shadow-mainTitle: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  --text-shadow-heroSlogan: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* ========================================================== */

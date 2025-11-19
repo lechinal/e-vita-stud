@@ -8,28 +8,20 @@
   overflow: hidden; /* Asigurăm că imaginea nu cauzează scroll orizontal */
   /* Recomandarea: Folosește o culoare de backup */
   background-color: var(--color-section-bg);
-}
 
-/* Imaginea de Fundal (Full-Width/Cover)
-*/
-.heroImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Se asigură că imaginea acoperă integral spațiul */
-  z-index: 1; /* Imaginea rămâne în spatele textului */
+  background-image: url("../../assets/images/home/bg-desktop.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 
-  /* Filtru subtil pentru a se alinia la estetica "Warm Vintage" */
-  filter: brightness(0.8) contrast(1.1);
+  filter: var(--filter-heroSectionImage);
 }
 
 /* Conținutul Text (Centrat)
 */
 .heroContent {
   position: relative;
-  z-index: 2; /* Asigură că textul este deasupra imaginii */
+  z-index: 2;
   text-align: center;
   padding: var(--space-md);
 
@@ -40,19 +32,22 @@
 /* Titlul H1: E VITA STUD. */
 .heroTitle {
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-h1); /* 5.5rem (88px) */
-  color: var(--color-primary-bg); /* Antique Ivory pentru contrast maxim */
-  margin-bottom: var(--space-xs); /* 16px */
-  letter-spacing: 0.1rem; /* Spațiere subtilă pentru impact */
+  font-size: var(--font-size-h1);
+  color: var(--color-primary-bg);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.1rem;
+  text-shadow: var(--text-shadow-mainTitle);
 }
 
 /* Slogan: Timeless elegance. Born for excellence. */
 .heroSlogan {
+  text-shadow: var(--text-shadow-heroSlogan);
+
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-h3); /* 2.5rem (40px) */
-  color: var(--color-accent-gold); /* Auriu regal */
-  font-weight: 400; /* Regular, pentru subtilitate */
-  margin-bottom: var(--space-lg); /* Spațiu generos înainte de CTA */
+  font-size: var(--font-size-h3);
+  color: var(--color-accent-gold);
+  font-weight: 400;
+  margin-bottom: var(--space-lg);
 }
 
 /* ---------------------------------------------------- */

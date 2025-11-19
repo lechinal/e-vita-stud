@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Suspense, lazy } from "react";
+
 import "./index.css";
 
 import Layout from "./components/Layout/Layout.jsx";
@@ -16,11 +17,12 @@ const HorseCatalog = lazy(() =>
   import("./pages/HorseCatalog/HorseCatalog.jsx")
 );
 function App() {
+  const location = useLocation();
   return (
-    <BrowserRouter basename="/e-vita-stud">
+    <>
       <ScrollToTop />
       <Suspense fallback={<Loader />}>
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/stables" element={<Stables />} />
@@ -33,7 +35,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </>
   );
 }
 

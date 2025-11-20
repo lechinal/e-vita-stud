@@ -16,11 +16,14 @@ const Legacy = lazy(() => import("./pages/Legacy/Legacy.jsx"));
 const HorseCatalog = lazy(() =>
   import("./pages/HorseCatalog/HorseCatalog.jsx")
 );
+import BackToTopButton from "./components/BackToTopButton/BackToTopButton.jsx";
+
 function App() {
   const location = useLocation();
   return (
     <>
       <ScrollToTop />
+      <BackToTopButton />
       <Suspense fallback={<Loader />}>
         <Routes location={location} key={location.pathname}>
           <Route element={<Layout />}>

@@ -1,9 +1,12 @@
 // src/components/Footer/Footer.jsx
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import SocialIcons from "../SocialIcons/SocialIcons";
+
+import LogoImg from "../../assets/images/footer/logoFooter-200x161.png";
+import LogoPng from "../../assets/logo/logo-desktop.png";
 
 function Footer() {
   const footerNav = [
@@ -18,12 +21,14 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.containerConstrained}>
-        {/* Secțiunea Principală de Footer (Grid Layout) */}
         <div className={styles.footerGrid}>
-          {/* Coloana 1: Brand & Misiune */}
           <div className={styles.colBrand}>
-            <Link to="/" className={styles.footerLogo}>
-              E VITA STUD
+            <Link to="/" className={styles.logoLink}>
+              <img
+                src={LogoPng}
+                alt="E Vita Stud Logo"
+                className={styles.footerLogoPng}
+              />
             </Link>
             <p className={styles.missionText}>
               Sângele celor mai buni cai arabi din Europa, cultivat cu pasiune
@@ -34,15 +39,14 @@ function Footer() {
             </div>
           </div>
 
-          {/* Coloana 2: Navigare Rapidă */}
           <div className={styles.colNav}>
             <h4 className={styles.colTitle}>Navigare Rapidă</h4>
             <ul className={styles.navList}>
               {footerNav.map((item) => (
                 <li key={item.path}>
-                  <Link to={item.path} className={styles.navLink}>
+                  <NavLink to={item.path} className={styles.navLink}>
                     {item.name}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>

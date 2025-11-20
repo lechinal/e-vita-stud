@@ -1,4 +1,4 @@
-.section {
+.socialSection {
   text-align: left;
   padding: 0;
 }
@@ -9,7 +9,7 @@
   color: var(--color-accent-gold);
   font-size: var(--font-size-body);
   font-weight: 700;
-  margin-bottom: var(--space-xxs);
+  margin-bottom: var(--space-sm);
   text-transform: uppercase;
 }
 

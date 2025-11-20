@@ -1,0 +1,51 @@
+.backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  color: #5c1a1b; /* ← Burgundy regal în starea normală */
+  border: 2px solid var(--color-accent-gold);
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+
+  box-shadow: none;
+}
+
+.backToTop:hover {
+  background-color: var(--color-accent-gold);
+  color: #f9f3e0; /* ← săgeata devine crem pe fundal auriu */
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px);
+}
+
+.backToTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Pe mobil puțin mai sus ca să nu acopere footer-ul */
+@media (max-width: 768px) {
+  .backToTop {
+    bottom: 100px; /* deasupra footer-ului */
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+}

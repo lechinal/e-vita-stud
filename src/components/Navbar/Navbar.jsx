@@ -17,8 +17,8 @@ function Navbar() {
   const menuItems = [
     { path: "/", label: "Home" },
     { path: "about-us", label: "About Us" },
-    { path: "/stables", label: "Stables" },
     { path: "/legacy", label: "Legacy" },
+    { path: "/stables", label: "Stables" },
     { path: "/experience", label: "Experience" },
     { path: "/contact", label: "Contact" },
   ];

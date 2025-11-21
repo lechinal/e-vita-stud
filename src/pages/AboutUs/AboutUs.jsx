@@ -92,7 +92,7 @@ function AboutUs() {
           <span className={styles.sectionLabel}>Serviciile Noastre</span>
 
           <h2 className={styles.sectionTitle}>
-            Creșterea, Performanța și Experiența E Vita Stud
+            Creșterea, Performanța și Experiența <br />E Vita Stud
           </h2>
 
           <p className={styles.servicesLead}>
@@ -105,33 +105,49 @@ function AboutUs() {
           <div className={styles.servicesGrid}>
             <details className={styles.serviceItem}>
               <summary className={styles.serviceTitle}>
-                Bloodline of Champions
+                <span className={styles.titleLetter}>B</span>loodline of
+                Champions
               </summary>
-              <p className={styles.serviceBody}>
-                Creșterea și vânzarea cailor Pur-Sânge Arabi din linii
-                genealogice de elită, destinați show-urilor de prestigiu și
-                performanței de vârf.
-              </p>
+              <div className={styles.serviceBodyWrapper}>
+                <p>
+                  Creșterea, selecția genetică și reproducția cailor Pur-Sânge
+                  Arabi de elită în Transilvania. Herghelie specializată în
+                  linii de campioni, montă exclusivistă și vânzarea puilor
+                  destinați performanței internaționale.
+                </p>
+              </div>
             </details>
+
+            {/* 2. Whispered Training Art */}
             <details className={styles.serviceItem}>
               <summary className={styles.serviceTitle}>
-                Whispered Training Art
+                <span className={styles.titleLetter}>W</span>hispered Training
+                Art
               </summary>
-              <p className={styles.serviceBody}>
-                Dresaj și antrenament profesionist, bazat pe filozofia noastră
-                de "conversație tăcută" și echilibru, pentru a atinge
-                potențialul maxim al fiecărui exemplar.
-              </p>
+              <div className={styles.serviceBodyWrapper}>
+                <p className={styles.serviceBody}>
+                  Dresaj clasic și antrenament profesionist, lecții private de
+                  echitație, cazare 5★ și îngrijire zilnică de excepție pentru
+                  caii de elită, totul bazat pe filozofia „conversației tăcute”
+                  și a echilibrului absolut.
+                </p>
+              </div>
             </details>
+
+            {/* 3. The Private Experience */}
             <details className={styles.serviceItem}>
               <summary className={styles.serviceTitle}>
-                The Private Experience
+                <span className={styles.titleLetter}>T</span>he Private
+                Experience
               </summary>
-              <p className={styles.serviceBody}>
-                Experiențe ecvestre private și vizite exclusive pe domeniu,
-                rezervate celor care doresc să înțeleagă intimitatea și ritualul
-                E Vita Stud.
-              </p>
+              <div className={styles.serviceBodyWrapper}>
+                <p className={styles.serviceBody}>
+                  Experiențe ecvestre exclusiviste pe domeniu: plimbări private,
+                  vizite VIP, și cazare regală. Oferim programe avansate de
+                  reabilitare și fizioterapie, rezervate celor care prețuiesc
+                  noblețea și discreția.
+                </p>
+              </div>
             </details>
           </div>
         </div>

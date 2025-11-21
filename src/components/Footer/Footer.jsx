@@ -12,8 +12,8 @@ function Footer() {
   const footerNav = [
     { name: "Acasa", path: "/" },
     { name: "Despre Noi", path: "/about-us" },
-    { name: "E Vita Stables", path: "/stables" },
     { name: "E Vita Legacy", path: "/legacy" },
+    { name: "E Vita Stables", path: "/stables" },
     { name: "Experiența", path: "/experience" },
     { name: "Contact", path: "/contact" },
   ];
